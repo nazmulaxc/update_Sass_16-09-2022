@@ -1,0 +1,68 @@
+//Calling variable;
+@import './import/variable';
+//It called Partials;
+@import './import/allfile';
+//Calling ul
+@import "./import/ul";
+
+//Normall mixin;
+@mixin span {
+        font-size: 21px;
+        line-height: 1.5px;
+        background-color: orangered;
+        color: rgb(86, 86, 86);
+        margin-top: 20px;
+}
+
+span{
+    @include span;
+};
+
+
+//How to crete a mixin file using paramiters;
+@mixin h3 ($f, $color , $bg){
+    font-size: $f;
+    color: $color;
+   background-color:$bg;
+};
+
+h3{
+    @include h3(14px,yellow ,red )
+}
+
+
+//Extend;
+//First create class in html file;
+//Then design css patan;
+//Then calling like it;
+//. class recommeded;
+
+.button{
+    color: white;
+    background-color: orange;
+    padding: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+};
+
+
+.btn {
+    @extend .button;
+};
+
+.btn2 {
+    
+    @extend .button;
+    background-color: red;
+};
+
+.btn3{
+    @extend .button;
+    background-color: green;
+}
